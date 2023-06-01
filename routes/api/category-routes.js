@@ -17,11 +17,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Category.findByPK(req.params.id, {
+  Category.findByPk(req.params.id, {
     include:[Product],
   })
     .then((categoryData) => {
-      res.json(Category);
+      res.json(categoryData);
     })
     .catch((err) => {
       console.log(error);
